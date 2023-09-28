@@ -3,39 +3,49 @@ import products from "../products.json";
 import { ProductCard } from "./components/ProductCard";
 import { Button } from "./components/Button";
 import { useState } from "react";
+import { capitalizeString } from "./util/capitalize-string";
 
 function App() {
   const [sortValue, setSortValue] = useState("name"); //Sortieren nach "price" or "name"
 
-  const handleSortNameClick = () => {
-    setSortValue("name");
-  };
-  const handleSortPriceClick = () => {
-    setSortValue("price");
-  };
-  // function handleSortNameClick(){
+  // const handleSortNameClick = () => {
+  //   setSortValue("name");
+  // };
+  // const handleSortPriceClick = () => {
   //   setSortValue("price");
-  // }
+  // };
+
+  const handleSortClick = (sort) => {
+    setSortValue(sort);
+  };
+
+  const handleFilterClick = (product) => {
+    return true;
+  };
+
   console.log("App has been called by react");
   return (
     <div className="App">
-      <h1>Produkte</h1>
+      {/* capitalizeString for Testin purposes only!!!
+      It's not needed for the actual functionality of the app
+      */}
+      <h1>{capitalizeString("test")}</h1>
       <Button
+        active={sortValue === "name"}
         onClick={() => {
-          console.log("Button1 has been clicked");
+          handleSortClick("name");
         }}
         text="Sortieren nach Name"
       />
       <Button
+        active={sortValue === "price"}
         onClick={() => {
-          console.log("Button2 has been clicked");
+          handleSortClick("price");
         }}
         text="Sortieren nach Preis"
       />
       {products
-        .filter((product) => {
-          return true;
-        })
+        .filter(handleFilterClick)
         .sort((productA, productB) => {
           if (sortValue === "price") {
             return productA.price - productB.price;

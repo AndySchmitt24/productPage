@@ -20,6 +20,18 @@ function App() {
   return (
     <div className="App">
       <h1>Produkte</h1>
+      <Button
+        onClick={() => {
+          console.log("Button1 has been clicked");
+        }}
+        text="Sortieren nach Name"
+      />
+      <Button
+        onClick={() => {
+          console.log("Button2 has been clicked");
+        }}
+        text="Sortieren nach Preis"
+      />
       {products
         .filter((product) => {
           return true;
@@ -45,8 +57,6 @@ function App() {
             />
           );
         })}
-      <Button type="button" onClick={handleSortNameClick} />
-      <Button type="button" onClick={handleSortPriceClick} />
     </div>
   );
 }

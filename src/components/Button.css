@@ -1,0 +1,11 @@
+.my-button {
+  background-color: cornflowerblue;
+}
+
+.my-button:hover {
+  background-color: blue;
+}
+
+.my-button:active {
+  background-color: hotpink;
+}

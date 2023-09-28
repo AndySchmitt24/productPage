@@ -1,35 +1,37 @@
 import "./App.css";
+import { useState } from "react";
 import products from "../products.json";
 import { ProductCard } from "./components/ProductCard";
 import { Button } from "./components/Button";
-import { useState } from "react";
 import { capitalizeString } from "./util/capitalize-string";
 
 function App() {
-  const [sortValue, setSortValue] = useState("name"); //Sortieren nach "price" or "name"
-
-  // const handleSortNameClick = () => {
-  //   setSortValue("name");
-  // };
-  // const handleSortPriceClick = () => {
-  //   setSortValue("price");
-  // };
+  const [sortValue, setSortValue] = useState("name"); // Sortieren nach "price" or "name"
+  const [filterValue, setFilterValue] = useState("all"); // All and other Categories
 
   const handleSortClick = (sort) => {
     setSortValue(sort);
   };
 
   const handleFilterClick = (product) => {
-    return true;
+    setFilterValue(product);
   };
 
-  console.log("App has been called by react");
+  const filterOptions = [
+    { name: "all", displayName: "Alle" },
+    { name: "Communication", displayName: "Kommunikationsgeräte" },
+    { name: "Electronics", displayName: "Elektronischegeräte" },
+    { name: "Home Appliances", displayName: "Haushaltsgeräte" },
+    { name: "Computers", displayName: "Computers" },
+    { name: "Kitchen", displayName: "Küche" },
+    { name: "Home Security", displayName: "Alle" },
+    { name: "Fitness", displayName: "Sport" },
+    { name: "Photography", displayName: "Alle" },
+  ];
+
   return (
     <div className="App">
-      {/* capitalizeString for Testin purposes only!!!
-      It's not needed for the actual functionality of the app
-      */}
-      <h1>{capitalizeString("test")}</h1>
+      <h1>{capitalizeString("Products")}</h1>
       <Button
         active={sortValue === "name"}
         onClick={() => {
@@ -44,8 +46,27 @@ function App() {
         }}
         text="Sortieren nach Preis"
       />
+      <br />
+      {filterOptions.map((option, index) => (
+        <Button
+          key={index}
+          active={filterValue === option.name}
+          onClick={() => {
+            handleFilterClick(option.name);
+          }}
+          text={option.displayName}
+        />
+      ))}
       {products
-        .filter(handleFilterClick)
+        .filter((product) => {
+          if (filterValue === "all") {
+            return true;
+          } else {
+            console.log(product.categories);
+            console.log(filterValue);
+            return product.categories.includes(filterValue);
+          }
+        })
         .sort((productA, productB) => {
           if (sortValue === "price") {
             return productA.price - productB.price;
@@ -56,17 +77,15 @@ function App() {
             );
           }
         })
-        .map((product) => {
-          return (
-            <ProductCard
-              key={product.product_name}
-              title={product.product_name}
-              price={product.price}
-              description={product.description}
-              manufacturer={product.manufacturer}
-            />
-          );
-        })}
+        .map((product, index) => (
+          <ProductCard
+            key={index}
+            title={product.product_name}
+            price={product.price}
+            description={product.description}
+            manufacturer={product.manufacturer}
+          />
+        ))}
     </div>
   );
 }

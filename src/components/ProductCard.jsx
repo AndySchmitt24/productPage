@@ -1,6 +1,12 @@
 import "./ProductCard.css";
 
-export function ProductCard({ title, price, description, manufacturer }) {
+export function ProductCard({
+  title,
+  price,
+  description,
+  manufacturer,
+  product_id,
+}) {
   console.log("ProductCard has been called by react");
   return (
     <div
@@ -13,6 +19,7 @@ export function ProductCard({ title, price, description, manufacturer }) {
       <p>{price}€</p>
       <p>{description}</p>
       <p>{manufacturer}</p>
+      <p>{product_id}</p>
     </div>
   );
 }

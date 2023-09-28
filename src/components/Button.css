@@ -1,5 +1,6 @@
 .my-button {
   background-color: cornflowerblue;
+  margin: 3px;
 }
 
 .my-button:hover {

@@ -1,8 +1,15 @@
 import "./Button.css";
 
-export function Button({ onClick, text }) {
+export function Button({ onClick, text, active }) {
   return (
-    <button className="my-button" onClick={onClick} type="button">
+    <button
+      className="my-button"
+      style={{
+        backgroundColor: active ? "red" : undefined,
+      }}
+      onClick={onClick}
+      type="button"
+    >
       {text}
     </button>
   );

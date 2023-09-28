@@ -1,0 +1,82 @@
+[
+  {
+    "product_id": 1,
+    "product_name": "Smartphone Pro",
+    "description": "A high-performance smartphone with advanced features.",
+    "price": 799.99,
+    "manufacturer": "TechGadget Inc.",
+    "categories": ["Electronics", "Communication"]
+  },
+  {
+    "product_id": 2,
+    "product_name": "Ultra HD Smart TV",
+    "description": "A large-screen TV with 4K resolution and smart capabilities.",
+    "price": 999.99,
+    "manufacturer": "TVMaster",
+    "categories": ["Electronics", "Home Appliances"]
+  },
+  {
+    "product_id": 3,
+    "product_name": "Refrigerator Deluxe",
+    "description": "A spacious refrigerator with advanced cooling technology.",
+    "price": 1499.95,
+    "manufacturer": "CoolTech Appliances",
+    "categories": ["Home Appliances"]
+  },
+  {
+    "product_id": 4,
+    "product_name": "Laptop Pro",
+    "description": "A powerful laptop for work and gaming.",
+    "price": 1299.99,
+    "manufacturer": "PCMaster",
+    "categories": ["Electronics", "Computers"]
+  },
+  {
+    "product_id": 5,
+    "product_name": "Coffee Maker with Grinder",
+    "description": "An all-in-one coffee maker with a built-in grinder.",
+    "price": 199.99,
+    "manufacturer": "CoffeeCo",
+    "categories": ["Home Appliances", "Kitchen"]
+  },
+  {
+    "product_id": 6,
+    "product_name": "Tablet Plus",
+    "description": "A versatile tablet for work and entertainment.",
+    "price": 499.99,
+    "manufacturer": "TechGadget Inc.",
+    "categories": ["Electronics", "Computers"]
+  },
+  {
+    "product_id": 7,
+    "product_name": "Smart Doorbell",
+    "description": "A video doorbell with smart security features.",
+    "price": 199.99,
+    "manufacturer": "SecurityTech",
+    "categories": ["Electronics", "Home Security"]
+  },
+  {
+    "product_id": 8,
+    "product_name": "Toaster Oven",
+    "description": "A compact toaster oven for quick and easy meals.",
+    "price": 79.99,
+    "manufacturer": "KitchenTech",
+    "categories": ["Home Appliances", "Kitchen"]
+  },
+  {
+    "product_id": 9,
+    "product_name": "Fitness Tracker",
+    "description": "A wearable fitness tracker to monitor your activity.",
+    "price": 79.99,
+    "manufacturer": "HealthTech",
+    "categories": ["Electronics", "Fitness"]
+  },
+  {
+    "product_id": 10,
+    "product_name": "Digital Camera",
+    "description": "A high-quality digital camera for capturing memories.",
+    "price": 499.99,
+    "manufacturer": "CameraMaster",
+    "categories": ["Electronics", "Photography"]
+  }
+]
